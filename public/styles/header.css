@@ -1,0 +1,15 @@
+header {
+  padding-top: 7em;
+  width: 100%;
+  align-items: center;
+  background-color: #D18700;
+  background-image: url(../images/simple-horizontal-light.png);
+  display: flex;
+  flex-direction: column;
+  color: #FFFFFF;
+  font-family: 'Verdana','Helvetica';
+}
+
+h4 {
+  font-weight: normal;
+}
