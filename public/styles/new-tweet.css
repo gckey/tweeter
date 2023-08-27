@@ -1,0 +1,32 @@
+
+#tweet-text {
+  border: 0;
+  border-bottom: 4px solid #545149;
+  background-color: #F4F1EC;
+}
+
+textarea {
+  width: 100%;
+  /* border: none; */
+}
+
+button {
+  margin-right: 20px;
+  margin-top: 8px;
+  background-color: #4056A1;
+  padding: 10px;
+  font-family: 'Bungee', sans-serif;
+  color: #FFFFFF;
+  font-size: medium;
+  border: none;
+}
+
+.counter {
+  margin-left: 20px;
+  font-family: 'Bungee', sans-serif;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
