@@ -1,0 +1,75 @@
+article.tweet {
+  height: 235px;
+  padding: 20px;  
+  border-style: solid;
+  border-width: thick;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-family: 'Calibri', sans-serif;
+}
+
+article.tweet header {
+  display: flex;
+  height: 65px;
+  background-color: #f4f1ec;
+  flex-direction: row;
+  padding-top: 0em;
+}
+
+article.tweet header i {
+  margin-right: 20px;
+  height: 30px;
+  color: #545149;
+}
+
+article.tweet header p {
+  margin: 20px;
+  font-size: 20px;
+  color: #545149;;
+  margin-left: auto;
+}
+
+article.tweet header h4 {
+  color: #545149;;
+  height: 30px;
+}
+
+article.tweet p {
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+article.tweet:hover {
+  box-shadow: 5px 5px 0 #C8C8C8;
+}
+
+article.tweet footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  border-top-style: solid;
+  border-width: thick;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+article.tweet footer .fa-flag:hover {
+  color: #FF9021;
+  cursor: pointer;
+}
+
+article.tweet footer .fa-retweet:hover {
+  color: #FF9021;
+  cursor: pointer;
+}
+
+article.tweet footer .fa-heart:hover {
+  color: #FF9021;
+  cursor: pointer;
+}
