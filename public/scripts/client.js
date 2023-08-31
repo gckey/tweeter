@@ -42,15 +42,15 @@ $(document).ready(function () {
   // renderTweets(data);
 
   const $form = $('#tweet-form');//Retreive the form
-  const $txt = $('#tweet-text');
-  console.log($form, $txt);
+  const $tweetTxt = $('#tweet-text');
+  console.log($form, $tweetTxt);
   // Listen for form submissions
   $form.on('submit', (event) => {
     event.preventDefault(); // Stop the form from loading a new page
     const $formData = $form.serialize();
-    if (!$txt.val()) {
+    if (!$tweetTxt.val()) { //Check if text field value is empty or not
       window.alert("Please enter a tweet content");
-    } else if ($txt.val().length > 140) {
+    } else if ($tweetTxt.val().length > 140) {
       window.alert("You've exceeded the maximum number of characters allowed for the tweet (140 characters)");
     } else {
       $.ajax({ // Submit form data using Ajax
@@ -66,6 +66,8 @@ $(document).ready(function () {
               console.log(data);
               //call renderTweets to display the tweets
               renderTweets(data);
+              $tweetTxt.val('');//sets the value empty for text input field
+              $('.counter').text('140');
             });
         },
         error: (error) => { console.error(error); } //Display errors if there are any
