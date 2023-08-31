@@ -4,6 +4,13 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// Function to prevent XSS attack
+const escape = function (str) {
+  const div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 // Fake data taken from initial-tweets.json
 $(document).ready(function () {
   const renderTweets = function (tweets) {
@@ -26,7 +33,7 @@ $(document).ready(function () {
     <h4>\u00A0\u00A0${tweet.user.name}</h4>
     <p>${tweet.user.handle}</p>
   </header>
-  <p>${tweet.content.text}</p>
+  <p>${escape(tweet.content.text)}</p>
   <footer>
     <p>${timeago.format(tweet.created_at)}</p>
     <div>
