@@ -48,23 +48,28 @@ $(document).ready(function () {
   $form.on('submit', (event) => {
     event.preventDefault(); // Stop the form from loading a new page
     const $formData = $form.serialize();
-    // Submit form data using Ajax
-    $.ajax({
-      type: "POST",
-      url: '/tweets',
-      data: $formData,
-      success: () => { // do sth with data
-        console.log("Tweet data loaded:", $formData);
-        //Run Ajax to retrieve tweet data
-        fetch('/tweets')
-          .then(loadTweets => loadTweets.json())
-          .then((data) => {
-            console.log(data);
-            //call renderTweets to display the tweets
-            renderTweets(data);
-          });
-      },
-      error: (error) => { console.error(error); } //Display errors if there are any
-    });
+    if (!$txt.val()) {
+      window.alert("Please enter a tweet content");
+    } else if ($txt.val().length > 140) {
+      window.alert("You've exceeded the maximum number of characters allowed for the tweet (140 characters)");
+    } else {
+      $.ajax({ // Submit form data using Ajax
+        type: "POST",
+        url: '/tweets',
+        data: $formData,
+        success: () => {
+          console.log("Tweet data loaded:", $formData);
+          //Run Ajax to retrieve tweet data
+          fetch('/tweets')
+            .then(loadTweets => loadTweets.json())
+            .then((data) => {
+              console.log(data);
+              //call renderTweets to display the tweets
+              renderTweets(data);
+            });
+        },
+        error: (error) => { console.error(error); } //Display errors if there are any
+      });
+    };
   });
 });
