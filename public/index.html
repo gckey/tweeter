@@ -34,10 +34,11 @@
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
 
   <!-- App JS -->
-  <script type="text/javascript" src="/scripts/client.js"></script>
-  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+  <script type="text/javascript" src="/scripts/client.js" defer></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js" defer></script>
 
   <!-- Font Awesome library -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -67,7 +68,7 @@
   <main class="container">
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
-      <form method="POST" action="/tweets">
+      <form id="tweet-form" method="POST" action="/tweets">
         <label for="tweet-text"><strong>What are you humming about?</strong></label>
         <textarea name="text" id="tweet-text"></textarea>
         <div class="flex">
