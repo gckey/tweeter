@@ -1,13 +1,14 @@
 
 #tweet-text {
-  border: 0;
   border-bottom: 4px solid #545149;
   background-color: #F4F1EC;
+  color: #545149;
 }
 
 textarea {
   width: 100%;
-  /* border: none; */
+  border: none;
+  outline: none;
 }
 
 button {
@@ -29,4 +30,18 @@ button {
 .flex {
   display: flex;
   justify-content: space-between;
+}
+
+#error {
+  font-weight: bold;
+  border: 2px solid #ff0000;
+  color: #ff0000;
+  display: none;
+}
+
+#error-msg {
+  font-weight: bold;
+  border: 2px solid #ff0000;
+  color: #ff0000;
+  display: none;
 }
