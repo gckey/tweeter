@@ -24,9 +24,9 @@ $(document).ready(function () {
   };
 
   const createTweetElement = function (tweet) {
-    //create a new jQuery object that represents a 'tweet' html structure.
+    //create a new jQuery object that represents a 'tweet' html structure
     //Get the article class
-    const $tweet = $("<article>").addClass("tweet") // let $tweet = /* Your code for creating the tweet element */ <article class="tweet">
+    const $tweet = $("<article>").addClass("tweet")
     const tweetContent = `
   <header>
     <img src="${tweet.user.avatars}">
@@ -46,8 +46,6 @@ $(document).ready(function () {
     $tweet.append(tweetContent);
     return $tweet;
   };
-  // renderTweets(data);
-
   const $form = $('#tweet-form');//Retreive the form
   const $tweetTxt = $('#tweet-text');
   console.log($form, $tweetTxt);
@@ -55,10 +53,18 @@ $(document).ready(function () {
   $form.on('submit', (event) => {
     event.preventDefault(); // Stop the form from loading a new page
     const $formData = $form.serialize();
-    if (!$tweetTxt.val()) { //Check if text field value is empty or not
-      window.alert("Please enter a tweet content");
+    if (!$tweetTxt.val()) {
+      $('#error')
+      .slideDown('slow')
+      setTimeout(() => {
+        $('#error').slideUp('slow');
+      }, 2500)
     } else if ($tweetTxt.val().length > 140) {
-      window.alert("You've exceeded the maximum number of characters allowed for the tweet (140 characters)");
+      $('#error-msg')
+        .slideDown('slow')
+      setTimeout(() => {
+        $('#error-msg').slideUp('slow');
+      }, 2500)
     } else {
       $.ajax({ // Submit form data using Ajax
         type: "POST",
