@@ -5,6 +5,9 @@
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
 
+  <!-- Disabling Viewport meta tag -->
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
   <!-- External CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     type="text/css">
@@ -69,6 +72,8 @@
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
       <form id="tweet-form" method="POST" action="/tweets">
+        <div id="error"><span>&#9888;</span>Please compose/write a tweet!</div>
+        <div id="error-msg"><span>&#9888;</span>You've surpassed the tweet's character limit of 140 characters.</div>
         <label for="tweet-text"><strong>What are you humming about?</strong></label>
         <textarea name="text" id="tweet-text"></textarea>
         <div class="flex">
@@ -79,28 +84,7 @@
     </section>
     <!-- Set up the tweets html markup -->
     <section class="tweet-container">
-      <article class="tweet">
-        <header>
-          <i class="fas fa-laugh"></i>
-          <h4>John Curwen</h4>
-          <p>@jhon.curwen</p>
-        </header>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officii.</p>
-        <footer>
-          <p>10 days ago</p>
-          <div>
-            <a href="#flag-link">
-              <i class="fas fa-flag"></i>
-            </a>
-            <a href="#retweet-link">
-              <i class="fas fa-retweet"></i>
-            </a>
-            <a href="#heart-link">
-              <i class="far fa-heart"></i>
-            </a>
-          </div>
-        </footer>
-      </article>
+
     </section>
   </main>
 </body>
