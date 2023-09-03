@@ -3,7 +3,6 @@ header {
   width: 100%;
   align-items: center;
   background-color: #D18700;
-  background-image: url(../images/simple-horizontal-light.png);
   display: flex;
   flex-direction: column;
   color: #FFFFFF;
@@ -12,4 +11,13 @@ header {
 
 h4 {
   font-weight: normal;
+}
+
+@media (min-width: 1024px) {
+  header {
+    width: 30vw;
+    float: left;
+    margin: 170px 0px 0px 100px;
+    position: fixed;
+  }
 }

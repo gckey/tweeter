@@ -8,6 +8,7 @@ nav {
   justify-content: space-between;
   padding-right: 1.5em;
   padding-left: 1.5em;
+  position: fixed;
 }
 
 .tweet-style {
@@ -22,5 +23,17 @@ nav {
 }
 
 .fa-custom {
-  color: red;
+  color: #ff0000;
+}
+
+@media (max-width: 850) {
+  nav {
+    background-color: #357ED1;
+  }
+}
+
+@media (min-width: 851px) {
+  nav span i {
+    color: #6699CC;
+  }
 }

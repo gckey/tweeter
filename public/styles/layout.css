@@ -18,7 +18,7 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: 'Source Sans', sans-serif;
 }
 
 nav {
@@ -32,4 +32,12 @@ nav {
  main {
   width: 90%;
   margin: 0 auto;
+ }
+
+ @media (min-width: 1024px) {
+  main {
+    margin: 120px 50px 50px 50px;
+    width: 50vw;
+    float: right;
+  }
  }
