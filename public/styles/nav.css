@@ -1,16 +1,3 @@
-nav {
-  display: flex;
-  height: 120px;
-  width: 100%;
-  background-color: #4056A1;
-  color: #FFFFFF;
-  padding-top: 1.5em;
-  justify-content: space-between;
-  padding-right: 1.5em;
-  padding-left: 1.5em;
-  position: fixed;
-}
-
 .tweet-style {
   display: flex;
   flex-direction: column;
@@ -26,14 +13,42 @@ nav {
   color: #ff0000;
 }
 
-@media (max-width: 850) {
-  nav {
-    background-color: #357ED1;
+@media (min-width: 1px) and (max-width: 347px) {
+  .container {
+    display: none;
+  }
+  .error {
+    display: block;
   }
 }
 
-@media (min-width: 851px) {
-  nav span i {
-    color: #6699CC;
+@media (max-width: 1024px) {
+  nav {
+    position: fixed;
+    top: 0;
+    display: flex;
+    height: 120px;
+    width: 100%;
+    color: #FFFFFF;
+    padding-top: 1.5em;
+    justify-content: space-between;
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+  }
+}
+
+@media (min-width: 1024px) {
+  nav {
+    position: fixed;
+    top: 0;
+    display: flex;
+    height: 120px;
+    width: 100%;
+    background-color: #4056A1;
+    color: #FFFFFF;
+    padding-top: 1.5em;
+    justify-content: space-between;
+    padding-right: 1.5em;
+    padding-left: 1.5em;
   }
 }
