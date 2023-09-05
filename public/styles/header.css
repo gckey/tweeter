@@ -14,6 +14,13 @@ h4 {
   font-weight: normal;
 }
 
+/*Prevent Tiny Displays*/
+@media (min-width: 1px) and (max-width: 347px) {
+  body > header, nav {
+    display: none;
+  }
+}
+
 @media (min-width: 1024px) {
   body > header {
     width: 30vw;
