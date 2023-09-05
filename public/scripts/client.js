@@ -48,14 +48,18 @@ $(document).ready(function () {
   };
   const $form = $('#tweet-form');//Retreive the form
   const $tweetTxt = $('#tweet-text');
-  console.log($form, $tweetTxt);
+  fetch('/tweets')
+    .then(loadTweets => loadTweets.json())
+    .then((data) => {
+      renderTweets(data);
+    });
   // Listen for form submissions
   $form.on('submit', (event) => {
     event.preventDefault(); // Stop the form from loading a new page
     const $formData = $form.serialize();
     if (!$tweetTxt.val()) {
       $('#error')
-      .slideDown('slow')
+        .slideDown('slow')
       setTimeout(() => {
         $('#error').slideUp('slow');
       }, 2500)
@@ -71,7 +75,6 @@ $(document).ready(function () {
         url: '/tweets',
         data: $formData,
         success: () => {
-          console.log("Tweet data loaded:", $formData);
           //Run Ajax to retrieve tweet data
           fetch('/tweets')
             .then(loadTweets => loadTweets.json())
